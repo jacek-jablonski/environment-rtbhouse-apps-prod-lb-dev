@@ -1,25 +1,67 @@
+autoUpdate:
+  enabled: false
+  schedule: ""
+bootConfigURL: https://github.com/rtbhouse-apps/environment-rtbhouse-apps-prod-lb-dev
 cluster:
-  clusterName: ""
-  environmentGitOwner: ""
-  environmentGitPublic: false
-  project: ""
+  clusterName: rtbhouse-apps-prod-lb
+  devEnvApprovers:
+  - jacek-jablonski
+  environmentGitOwner: rtbhouse-apps
+  gitKind: github
+  gitName: github
+  gitServer: https://github.com
+  namespace: jx
+  project: rtbhouse-apps
   provider: gke
-  zone: ""
-gitops: true
+  registry: gcr.io
+  zone: europe-west4-c
 environments:
-- key: dev
-- key: staging
-- key: production
+- ingress:
+    domain: 34.90.148.113.nip.io
+    externalDNS: false
+    namespaceSubDomain: -jx.
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: dev
+  repository: environment-rtbhouse-apps-prod-lb-dev
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: staging
+  repository: environment-rtbhouse-apps-prod-lb-staging
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: production
+  repository: environment-rtbhouse-apps-prod-lb-production
+gitops: true
 ingress:
-  domain: ""
+  domain: 34.90.148.113.nip.io
   externalDNS: false
+  namespaceSubDomain: -jx.
   tls:
     email: ""
     enabled: false
     production: false
 kaniko: true
+repository: nexus
 secretStorage: local
 storage:
+  backup:
+    enabled: false
+    url: ""
   logs:
     enabled: false
     url: ""
@@ -29,7 +71,11 @@ storage:
   repository:
     enabled: false
     url: ""
+vault: {}
+velero:
+  schedule: ""
+  ttl: ""
 versionStream:
-  ref: "master"
+  ref: v1.0.324
   url: https://github.com/jenkins-x/jenkins-x-versions.git
 webhook: prow

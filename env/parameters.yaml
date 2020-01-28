@@ -1,0 +1,10 @@
+adminUser:
+  password: local:rtbhouse-apps-prod-lb/adminUser:password
+  username: admin
+enableDocker: false
+pipelineUser:
+  email: jacek.jablonski@rtbhouse.com
+  token: local:rtbhouse-apps-prod-lb/pipelineUser:token
+  username: jacek-jablonski
+prow:
+  hmacToken: local:rtbhouse-apps-prod-lb/prow:hmacToken
