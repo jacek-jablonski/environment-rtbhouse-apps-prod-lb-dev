@@ -1,0 +1,21 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: rtbhouse-apps
+    provider: github
+    repository: jenkins-sample-go
+  name: rtbhouse-apps-jenkins-sample-go
+spec:
+  description: Imported application for rtbhouse-apps/jenkins-sample-go
+  httpCloneURL: https://github.com/rtbhouse-apps/jenkins-sample-go.git
+  org: rtbhouse-apps
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: jenkins-sample-go
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/rtbhouse-apps/jenkins-sample-go.git

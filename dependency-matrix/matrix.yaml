@@ -1,0 +1,7 @@
+dependencies:
+- host: github.com
+  owner: rtbhouse-apps
+  repo: jenkins-sample-go
+  url: https://github.com/rtbhouse-apps/jenkins-sample-go.git
+  version: ""
+  versionURL: ""
